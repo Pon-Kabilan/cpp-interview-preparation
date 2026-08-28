@@ -16,7 +16,6 @@ void printA()
     for (int i = 0; i < COUNT; i++)
     {
         unique_lock<mutex> lock(m);
-
         cv.wait(lock, [] {
             return turn == 0;
         });
